@@ -4,6 +4,7 @@ const session = require('express-session');
 
 // import libraries
 const OTLPException = require('./lib/OTLPException');
+const db = require('./database/db');
 
 // Create a new express app
 const app = express();
@@ -49,8 +50,15 @@ app.use((req, res, next) => {
 app.use(OTLPException);
 
 // Routes
-app.use('/', (req, res) => {
-    res.send('Hello World!');
+app.use('/', async (req, res) => {
+    // test the database connection
+    let rows = [];
+    try {
+        rows = await db.query('SELECT * FROM "users"');
+    } catch (err) {
+        console.log(err);
+    }
+    return res.send(rows);
 });
 
 // Start the server
