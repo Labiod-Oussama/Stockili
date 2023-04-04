@@ -10,7 +10,7 @@ const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http')
 require("dotenv").config();
 
 // For troubleshooting, set the log level to DiagLogLevel.DEBUG
-opentelemetry.diag.setLogger(new opentelemetry.DiagConsoleLogger(), opentelemetry.DiagLogLevel.ALL);
+opentelemetry.diag.setLogger(new opentelemetry.DiagConsoleLogger(), opentelemetry.DiagLogLevel.ERROR);
 
 /**
   * This function is used to set the span attributes
