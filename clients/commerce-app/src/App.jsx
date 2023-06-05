@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Dashboard from './Component/Dashboard'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Dashboard from './Components/Dashboard/Dashboard'
+import { theme } from './Components/Gloabl/Theme'
 import { ThemeProvider } from '@mui/material'
-import { theme } from '../../admin-shop-panel/src/Components/Gloabal/Theme'
+
 function App() {
   return (
     <>
@@ -14,7 +15,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
-      
     </>
   )
 }

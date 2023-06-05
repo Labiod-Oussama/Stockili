@@ -13,20 +13,16 @@ function About() {
     const isMatchedPhone = useMediaQuery(theme.breakpoints.down('sm'))
     return (
         <Box pt={2}>
-            <Typography variant={isMatchedPhone?'h4':'h3'} color='primary.main' sx={{ textAlign: 'center',fontFamily:'Yusei Magic', mb: 5 }}>
+            <Typography variant={isMatchedPhone ? 'h4' : 'h3'} color='primary.main' sx={{ textAlign: 'center', fontFamily: 'Yusei Magic', mb: 5 }}>
                 About Us
             </Typography>
-            <Box display='flex' p={isMatchedPhone?'0 15px':'0 50px'} flexDirection={isMatchedPhone ? 'column-reverse' : 'row'} mb={8} mt={3}>
+            <Box display='flex' p={isMatchedPhone ? '0 15px' : '0 50px'} flexDirection={isMatchedPhone ? 'column-reverse' : 'row'} mb={8} mt={3}>
                 <Box data-aos="fade-right" flex={1} textAlign='center'>
                     <img src={about} alt="cv" width='80%' />
                 </Box>
                 <Box data-aos="fade-left" flex={1} p={isMatchedPhone ? '0 5px' : '0 50px'} display='flex' flexDirection='column' justifyContent='center' mb={isMatchedPhone && 5} >
-                    <Typography variant={isMatchedPhone ? 'h5' : 'h4'} sx={{ fontWeight: 'bolder', mb: isMatchedPhone ? 2 : 5 }} color='secondary.main' gutterBottom>
-                        How about startups ?
-                    </Typography>
-                    <Typography variant='body1' color='secondary.main'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quaerat doloremque quae dignissimos ab eius laboriosam, odit impedit tenetur expedita labore? Eaque ab accusantium modi.
-                    </Typography>
+                    <Typography variant='body1' color='secondary.main' sx={{fontWeight:'bold',lineHeight:'27px',":first-letter":{color:'primary.light'}}}>
+                        We are a startup organization whose main activity is programming the Web application for running shops, and we are trying to offer brand-new, differentiated features and services. Our goal is to satisfy our customers by continuing to offer better and newer services to help them run their stores in an easy and fast way, saving them time, effort and money                    </Typography>
                 </Box>
             </Box>
         </Box>
