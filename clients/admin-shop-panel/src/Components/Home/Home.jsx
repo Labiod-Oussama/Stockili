@@ -1,5 +1,5 @@
-import { Box, Button, Container, Typography, useMediaQuery, useTheme } from '@mui/material'
-import React, { useRef } from 'react'
+import { Box, Button, Container, Dialog, DialogActions, DialogContent, DialogTitle, TextField, Typography, useMediaQuery, useTheme } from '@mui/material'
+import React, { useRef, useState } from 'react'
 import Header from '../Gloabal/Header'
 import HeadImage from '../../assets/HeadImage.png'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
@@ -11,6 +11,10 @@ function Home() {
     const AboutRef = useRef(null);
     const goToAbout = () => {
         AboutRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+    const [open, setOpen] = useState(false);
+    const handleCloseForm = () => {
+        setOpen(false)
     }
     const theme = useTheme()
     const isMatchedTablette = useMediaQuery(theme.breakpoints.down('md'))
@@ -60,8 +64,57 @@ function Home() {
             <Box >
                 <Services />
             </Box>
-            <Prices />
+            <Prices setOpen={setOpen} />
             <Footer />
+            <Dialog open={open} onClose={handleCloseForm}>
+                <DialogTitle color='primary' fontWeight='bold'>FILL YOUR FORM</DialogTitle>
+                <DialogContent>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        label="your register ID"
+                        type="email"
+                        fullWidth
+                        variant="filled"
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        label="your store's name"
+                        type="email"
+                        fullWidth
+                        variant="filled"
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        label="your email"
+                        type="email"
+                        fullWidth
+                        variant="filled"
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        label="your phone number"
+                        type="email"
+                        fullWidth
+                        variant="filled"
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        label="your address"
+                        type="email"
+                        fullWidth
+                        variant="filled"
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleCloseForm} >Cancel</Button>
+                    <Button onClick={handleCloseForm} variant='contained'>Send your demand</Button>
+                </DialogActions>
+            </Dialog>
 
         </Box>
     )

@@ -1,0 +1,51 @@
+export const mockDataProducts = [
+    {
+        id: 1,
+        products: "Tomato",
+        Price: 10,
+        Quantite: 3,
+        Amount: 30,
+    },
+    {
+        id: 2,
+        products: "Fromage",
+        Price: 20,
+        Quantite: 1,
+        Amount: 20,
+    },
+    {
+        id: 3,
+        products: "Milka",
+        Price: 2,
+        Quantite: 2,
+        Amount: 6,
+    },
+    {
+        id: 4,
+        products: "Chips",
+        Price: 2,
+        Quantite: 5,
+        Amount: 10,
+    },
+    {
+        id: 5,
+        products: "Honey",
+        Price: 14,
+        Quantite: 2,
+        Amount: 28,
+    },
+    {
+        id: 6,
+        products: "Honey",
+        Price: 14,
+        Quantite: 2,
+        Amount: 28,
+    },
+    {
+        id: 7,
+        products: "Honey",
+        Price: 14,
+        Quantite: 2,
+        Amount: 28,
+    },
+];
